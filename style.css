@@ -49,6 +49,57 @@ body {
 }
 
 
+/* Container must be relative so child elements can be absolutely positioned */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 250px; /* adjust to fit your image height */
+    overflow: hidden;
+}
+
+/* Full background image */
+.header-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* scales image to fill container */
+    display: block;
+}
+
+/* Semi-transparent overlay */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;         /* slightly smaller than full width */
+    height: 70%;        /* adjust for proportion */
+    background-color: rgba(51, 167, 181, 0.7); /* #33a7b5 with 70% opacity */
+    margin: 20px auto;  /* center horizontally */
+    border-radius: 8px;
+}
+
+/* Solid title box at bottom-left */
+.header-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #33a7b5; /* solid greenish */
+    padding: 15px 25px;
+    border-radius: 6px;
+    color: white;
+}
+
+/* Optional: title styling */
+.header-title h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-title h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
 /* Profile picture */
 .profile-pic {
   width: 180px;                /* adjust size as needed */

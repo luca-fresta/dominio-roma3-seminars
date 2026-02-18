@@ -1,9 +1,9 @@
 #!/bin/bash
+LOCAL_REPO=~/Documents/dominio-roma3-seminars/
+REMOTE_USER=fresta
+REMOTE_HOST=www.mat.uniroma3.it
+REMOTE_PATH=/www/public/users/pmp-seminars/
 
-# Aggiorna repo locale da GitHub
-git pull origin main
+rsync -avz --delete $LOCAL_REPO $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH
 
-# Copia i file sul server UniRoma3
-rsync -avz --delete ./ fresta@www.mat.uniroma3.it:/www/public/users/fresta/
-
-echo "Deploy completato!"
+ssh $REMOTE_USER@$REMOTE_HOST "chmod 644 $REMOTE_PATH*; chmod 755 $REMOTE_PATHimages"
